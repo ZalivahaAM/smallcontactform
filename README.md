@@ -1,5 +1,7 @@
 # Small Contact form
 > Simple but flexible contact form builder with custom fields, validation and passive antispam.
+>
+> Compatible with October CMS v4.
 
 
 ## Installation

@@ -333,3 +333,5 @@
     - scf_tables_07.php
 1.69.1:
     - Fixed reCaptcha invisible script for multiple forms
+1.70.0:
+    - Updated for October CMS v4 compatibility
