@@ -3,7 +3,6 @@
 namespace JanVince\SmallContactForm;
 
 use Backend;
-use Validator;
 use JanVince\SmallContactForm\Models\Settings;
 use JanVince\SmallContactForm\Rules\CustomNotRegexRule;
 use JanVince\SmallContactForm\Classes\UnreadRecords;
@@ -36,20 +35,7 @@ class Plugin extends PluginBase {
      * @return void
      */
     public function register() {
-        if (class_exists(\System::class) && version_compare(\System::VERSION, '3.0.0', '>=')) {
-            $this->registerValidationRule('custom_not_regex', CustomNotRegexRule::class);
-        }
-    }
-
-    /**
-     * Boot Plugin Hook
-     *
-     * @return void
-     */
-    public function boot() {
-        if (!class_exists(\System::class) || (class_exists(\System::class) && version_compare(\System::VERSION, '3.0.0', '<'))) {
-            Validator::extend('custom_not_regex', CustomNotRegexRule::class);
-        }
+        $this->registerValidationRule('custom_not_regex', CustomNotRegexRule::class);
     }
 
     public function registerSettings() {
